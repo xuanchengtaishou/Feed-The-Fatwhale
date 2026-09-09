@@ -1,0 +1,40 @@
+services:
+  # 后端API服务
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    container_name: analytics-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY:-*114514*}
+    volumes:
+      - ./data:/app/data
+      - ./results:/app/results
+      - ./saved_models:/app/saved_models
+    networks:
+      - analytics-network
+
+  # 前端界面服务
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.frontend
+    container_name: analytics-frontend
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    environment:
+      - API_BASE_URL=http://api:8000
+    volumes:
+      - ./saved_models:/app/saved_models
+    networks:
+      - analytics-network
+
+networks:
+  analytics-network:
+    driver: bridge

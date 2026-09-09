@@ -1,0 +1,24 @@
+{
+  "model_type": "random_forest",
+  "task_type": "catdog_image_classification",
+  "classes": {
+    "0": "猫",
+    "1": "狗"
+  },
+  "total_images": 1400,
+  "train_images": 980,
+  "test_images": 420,
+  "label_counts": {
+    "猫": 700,
+    "狗": 700
+  },
+  "skipped_images": 0,
+  "metrics": {
+    "accuracy": 0.6333333333333333,
+    "precision": 0.6505376344086021,
+    "recall": 0.5761904761904761,
+    "f1_score": 0.6111111111111112
+  },
+  "saved_at": "2026-09-08 11:37:45",
+  "model_file": "catdog_model.pkl"
+}
