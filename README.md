@@ -1,4 +1,4 @@
-# 喂食大肥鱼 ver2.0 技术文档
+# 喂食大肥鱼  技术文档
 
 ## 1. 文档说明
 
@@ -80,7 +80,7 @@ FastAPI 后端 :8000
 ## 4. 目录结构
 
 ```text
-喂食大肥鱼 ver2.0/
+喂食大肥鱼 /
 ├─ app/
 │  ├─ main.py                  # FastAPI 应用、分析引擎、接口和图表
 │  ├─ streamlit_app.py         # Streamlit 主页面和前端交互
